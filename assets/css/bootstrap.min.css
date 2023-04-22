@@ -4032,40 +4032,47 @@ TEST CODE
 */
 .course-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .course-card {
   border: 2px solid black;
   border-radius: 5px;
   padding: 20px;
-  width: 30%;
+  width: calc(33.33% - 20px);
   text-align: center;
-  margin-right: 20px; /* Add a margin to the right side */
+  margin-right: 20px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
 }
+
 .course-card:last-child {
-  margin-right: 0; /* Remove the margin for the last course */
+  margin-right: 0;
 }
 
-.course-card h2 {
-  margin-top: 0;
-}
-
-.course-card p {
-  margin: 10px 0;
-}
-
-.rating {
-  background-color: #f7dc6f;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 5px 10px;
+.course-card a {
+  display: block;
+  text-decoration: none;
+  color: black;
 }
 
 .course-card img {
-  display: block;
-  margin: 0 auto 10px;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.course-card h2 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .course-card {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 
